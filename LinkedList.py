@@ -7,7 +7,7 @@ class Node:
     self.__value = value
   def setNext(self, next):
     self.__next = next
-  def setPrev(selv, prev):
+  def setPrev(self, prev):
     self.__prev = prev
   def getValue(self):
     return self.__value
