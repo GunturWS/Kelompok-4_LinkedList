@@ -70,6 +70,27 @@ class LinkedList:
               new_node.setPrev(n)
               self.tail = new_node
          self.length+=1
-           
-          
+    
+    # Method untuk menampilkan nilai dari Node yang ada di linked list
+    def printLL(self):
+        n = self.head
+        while n != None:
+            print(n.getValue(), "-->", end=" ")
+            n = n.getNext()
+        print("None")
+        
+    # Method untuk mendapatkan Node pada indeks tertentu
+    def getLL(self, index):
+        if index == 0:
+            return self.head.getValue()
+        else:
+            count=1
+            n=self.head
+            while count<index and n!=None:
+                n=n.getNext()
+                count+=1
+            if n.getNext() == None:
+                print("index yang dimaksud tidak ada")
+            else:
+                return n.getNext().getValue()
           
