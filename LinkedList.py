@@ -71,16 +71,16 @@ class LinkedList:
               self.tail = new_node
     self.length+=1
     
-    # Method untuk menampilkan nilai dari Node yang ada di linked list
-    def printLL(self):
+  # Method untuk menampilkan nilai dari Node yang ada di linked list
+  def printLL(self):
         n = self.head
         while n != None:
             print(n.getValue(), "-->", end=" ")
             n = n.getNext()
         print("None")
         
-    # Method untuk mendapatkan Node pada indeks tertentu
-    def getLL(self, index):
+  # Method untuk mendapatkan Node pada indeks tertentu
+  def getLL(self, index):
         if index == 0:
             return self.head.getValue()
         else:
@@ -94,8 +94,8 @@ class LinkedList:
             else:
                 return n.getNext().getValue()
     
-    # Method untuk menghapus Node berdasarkan indeks
-    def remove(self, index):
+  # Method untuk menghapus Node berdasarkan indeks
+  def remove(self, index):
         if index == 0:
             self.head = self.head.getNext()
         else:
@@ -114,8 +114,8 @@ class LinkedList:
                 self.tail = n
         self.length-=1
 
-    # Method untuk menghapus Node berdasarkan Value
-    def removeByValue(self, value):
+  # Method untuk menghapus Node berdasarkan Value
+  def removeByValue(self, value):
         if self.head == None:
             print("Tidak dapat menghapus, Linked List kosong")
             return
@@ -144,8 +144,8 @@ class LinkedList:
                 break
             n = n.getNext()
 
-    # Method untuk menghapus value yang duplikat
-    def removeDuplicate(self):
+  # Method untuk menghapus value yang duplikat
+  def removeDuplicate(self):
         n = self.head
         t = self.head.getNext()
         while n.getNext() != None:
@@ -157,8 +157,8 @@ class LinkedList:
                 n = n.getNext()
                 t = n.getNext()
                 
-    # Method untuk menukar Node
-    def swap(self, index1, index2):
+  # Method untuk menukar Node
+  def swap(self, index1, index2):
         if index1 >= self.length or index2 >= self.length:
             print("indeks yang dimasukkan melebihi panjang linked list")
         elif index1 == index2:
@@ -194,8 +194,8 @@ class LinkedList:
                             break
                     n = n.getNext()
 
-    # Method untuk mengubah Tail ke Head
-    def swapHeadTail(self):
+  # Method untuk mengubah Tail ke Head
+  def swapHeadTail(self):
         self.swap(0,self.length-1)
        
 myLL = LinkedList()
