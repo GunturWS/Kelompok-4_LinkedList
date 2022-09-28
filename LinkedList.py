@@ -46,4 +46,30 @@ class LinkedList:
       self.head = new_node
     self.length+=1
     
-  def
+  #Method untuk menyisipkan node pada indeks tertentu
+  def insert(self,value,index):
+    if index ==   0:
+      self.add_begin(value):
+        else:
+          count=1
+          n=self.head
+          new_node=Node(value)
+          while count<index and n!=None
+              n=n.getNext()
+              count+=1
+          if n == None:
+              print("index yang dimasukkan melebihi panjang LinkedList")
+          elif n.getNext() != None:
+              new_node.setNext(n.getNext())
+              n.getNext().setPrev(new_node)
+              n.setNext(new_node)
+              new_node.setPrev(n)
+          else:
+              new_node.setNext(n.getNext())
+              n.setNext(new_node)
+              new_node.setPrev(n)
+              self.tail = new_node
+         self.length+=1
+           
+          
+          
