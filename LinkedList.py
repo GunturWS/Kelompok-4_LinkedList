@@ -197,18 +197,17 @@ class LinkedList:
     # Method untuk mengubah Tail ke Head
     def swapHeadTail(self):
         self.swap(0,self.length-1)
-        
-        
+       
 myLL = LinkedList()
-print()
-print(".:: Menghapus Node berdasarkan Value(Menghapus value R) ::.")
+print ()
+print(".:: Menghapus Nde berdasarkan Value
 print("Before:")
 myLL.add_end("S")
 myLL.add_end("T")
 myLL.add_end("R")
 myLL.add_end("U")
 myLL.add_end("K")
-myLL.add_end("D")
+myLL.add_end("U")
 myLL.add_end("A")
 myLL.add_end("T")
 myLL.printLL()
@@ -216,5 +215,17 @@ print("After:")
 myLL.removeByValue("R")
 myLL.printLL()
 print()
-       
-    
+print(".::Menghapus value yang duplikat::.")
+print("Before:")
+myLL.insert("A",3)
+myLL.printLL()
+print("After:")
+myLL.removeDuplicate()
+myLL.printLL()
+print()
+print(".::Mengubah Tail ke Head::.")
+print("Before:")
+myLL.printLL()
+print("After:")
+myLL.swapHeadTail()
+myLL.printLL()
