@@ -156,5 +156,46 @@ class LinkedList:
             if t == None:
                 n = n.getNext()
                 t = n.getNext()
+                
+    # Method untuk menukar Node
+    def swap(self, index1, index2):
+        if index1 >= self.length or index2 >= self.length:
+            print("indeks yang dimasukkan melebihi panjang linked list")
+        elif index1 == index2:
+            print("tidak bisa menjalankan perintah, indeks yang dimasukkan sama")
+        elif self.head.getValue() == self.getLL(index1):
+                temp = self.getLL(index1)
+                self.add_begin(self.getLL(index2))
+                self.remove(index1+1)
+                self.insert(temp, index2)
+                self.remove(index2+1)
+        elif self.head.getValue() == self.getLL(index2):
+                temp = self.getLL(index2)
+                self.add_begin(self.getLL(index1))
+                self.remove(index2+1)
+                self.insert(temp, index1)
+                self.remove(index1+1)
+        else:   
+            n=self.head
+            while n != None:
+                    if n.getValue() == self.getLL(index1):
+                            temp = self.getLL(index1)
+                            self.insert(self.getLL(index2),index1)
+                            self.remove(index1+1)
+                            self.insert(temp,index2)
+                            self.remove(index2+1)
+                            break
+                    elif n.getValue() == self.getLL(index2):
+                            temp = self.getLL(index2)
+                            self.insert(self.getLL(index1),index2)
+                            self.remove(index2+1)
+                            self.insert(temp,index1)
+                            self.remove(index1+1)
+                            break
+                    n = n.getNext()
+
+    # Method untuk mengubah Tail ke Head
+    def swapHeadTail(self):
+        self.swap(0,self.length-1)
        
     
