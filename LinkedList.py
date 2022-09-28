@@ -93,4 +93,67 @@ class LinkedList:
                 print("index yang dimaksud tidak ada")
             else:
                 return n.getNext().getValue()
+    
+    # Method untuk menghapus Node berdasarkan indeks
+    def remove(self, index):
+        if index == 0:
+            self.head = self.head.getNext()
+        else:
+            count=1
+            n=self.head
+            while count<index and n!=None:
+                n=n.getNext()
+                count+=1
+            if n == None or n.getNext() == None:
+                print("index yang dimasukkan harus kurang dari panjang LinkedList")
+            elif n.getNext().getNext() != None:
+                n.getNext().getNext().setPrev(n)
+                n.setNext(n.getNext().getNext())
+            else:
+                n.setNext(n.getNext().getNext())
+                self.tail = n
+        self.length-=1
+
+    # Method untuk menghapus Node berdasarkan Value
+    def removeByValue(self, value):
+        if self.head == None:
+            print("Tidak dapat menghapus, Linked List kosong")
+            return
+        if self.head.getValue() == value and self.head.getNext().getNext() == None:
+            self.head = self.head.getNext()
+            self.tail = self.head
+            self.length-=1
+            if self.tail.getValue() == value:
+                self.head = None
+                self.tail = None
+                self.length-=1
+                return
+        elif self.head.getValue() == value:
+            self.head = self.head.getNext()
+            self.length-=1
+        n = self.head
+        while n.getNext() != None:
+            if n.getNext().getValue() == value and n.getNext().getNext() != None:
+                n.getNext().getNext().setPrev(n)
+                n.setNext(n.getNext().getNext()) 
+                self.length-=1
+            if n.getNext().getValue() == value and n.getNext().getNext() == None:
+                n.setNext(n.getNext().getNext()) 
+                self.tail = n
+                self.length-=1
+                break
+            n = n.getNext()
+
+    # Method untuk menghapus value yang duplikat
+    def removeDuplicate(self):
+        n = self.head
+        t = self.head.getNext()
+        while n.getNext() != None:
+            if n.getValue() == t.getValue():
+                self.removeByValue(t.getValue())
+            if t != None:
+                t = t.getNext()
+            if t == None:
+                n = n.getNext()
+                t = n.getNext()
           
