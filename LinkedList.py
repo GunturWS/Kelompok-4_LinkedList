@@ -156,4 +156,5 @@ class LinkedList:
             if t == None:
                 n = n.getNext()
                 t = n.getNext()
-          
+       
+    def
