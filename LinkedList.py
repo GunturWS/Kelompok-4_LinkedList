@@ -157,4 +157,4 @@ class LinkedList:
                 n = n.getNext()
                 t = n.getNext()
        
-    def
+    
