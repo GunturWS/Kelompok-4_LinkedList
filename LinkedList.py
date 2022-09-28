@@ -48,13 +48,13 @@ class LinkedList:
     
   #Method untuk menyisipkan node pada indeks tertentu
   def insert(self,value,index):
-    if index ==   0:
-      self.add_begin(value):
-        else:
+    if index == 0:
+          self.add_begin(value)
+    else:
           count=1
           n=self.head
           new_node=Node(value)
-          while count<index and n!=None
+          while count<index and n!=None:
               n=n.getNext()
               count+=1
           if n == None:
@@ -69,7 +69,7 @@ class LinkedList:
               n.setNext(new_node)
               new_node.setPrev(n)
               self.tail = new_node
-         self.length+=1
+    self.length+=1
     
     # Method untuk menampilkan nilai dari Node yang ada di linked list
     def printLL(self):
@@ -200,14 +200,14 @@ class LinkedList:
        
 myLL = LinkedList()
 print ()
-print(".:: Menghapus Nde berdasarkan Value
+print(".:: Menghapus Node berdasarkan Value(Menghapus value R) ::.")
 print("Before:")
 myLL.add_end("S")
 myLL.add_end("T")
 myLL.add_end("R")
 myLL.add_end("U")
 myLL.add_end("K")
-myLL.add_end("U")
+myLL.add_end("D")
 myLL.add_end("A")
 myLL.add_end("T")
 myLL.printLL()
